@@ -1,4 +1,4 @@
-package com.simuelunbo.simpletodoapp
+package com.simuelunbo.simplenoteapp
 
 import org.junit.Test
 

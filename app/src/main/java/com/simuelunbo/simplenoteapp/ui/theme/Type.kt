@@ -1,4 +1,4 @@
-package com.simuelunbo.simpletodoapp.ui.theme
+package com.simuelunbo.simplenoteapp.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
