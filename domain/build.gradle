@@ -9,6 +9,9 @@ java {
 }
 
 dependencies {
+    // Hilt Core
+    implementation 'com.google.dagger:hilt-core:2.44.2'
+
     // coroutine
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
