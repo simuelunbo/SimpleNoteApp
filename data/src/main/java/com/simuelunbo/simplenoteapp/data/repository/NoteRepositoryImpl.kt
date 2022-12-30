@@ -1,6 +1,6 @@
 package com.simuelunbo.simplenoteapp.data.repository
 
-import com.simuelunbo.simplenoteapp.data.local.Dao.NoteDao
+import com.simuelunbo.simplenoteapp.data.local.dao.NoteDao
 import com.simuelunbo.simplenoteapp.domain.model.Note
 import com.simuelunbo.simplenoteapp.domain.repository.NoteRepository
 import kotlinx.coroutines.flow.Flow

@@ -1,11 +1,7 @@
-package com.simuelunbo.simplenoteapp.data.local.Dao
+package com.simuelunbo.simplenoteapp.data.local.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import com.simuelunbo.simplenoteapp.data.model.NoteHistory
+import androidx.room.*
+import com.simuelunbo.simplenoteapp.data.local.entity.NoteHistory
 import kotlinx.coroutines.flow.Flow
 
 @Dao
