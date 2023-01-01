@@ -1,6 +1,7 @@
 package com.simuelunbo.simplenoteapp.domain.di
 
 import com.simuelunbo.simplenoteapp.domain.repository.NoteRepository
+import com.simuelunbo.simplenoteapp.domain.usecase.AddNoteUseCase
 import com.simuelunbo.simplenoteapp.domain.usecase.DeleteNoteUseCase
 import com.simuelunbo.simplenoteapp.domain.usecase.GetNotesUseCase
 import com.simuelunbo.simplenoteapp.domain.usecase.NoteUseCases
@@ -19,7 +20,8 @@ abstract class NoteUseCaseModule {
     fun bindsNoteUseCases(repository: NoteRepository): NoteUseCases {
         return NoteUseCases(
             getNotes = GetNotesUseCase(repository),
-            deleteNote = DeleteNoteUseCase(repository)
+            deleteNote = DeleteNoteUseCase(repository),
+            addNote = AddNoteUseCase(repository)
         )
     }
 }
