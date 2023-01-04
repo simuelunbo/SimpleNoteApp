@@ -1,10 +1,7 @@
 package com.simuelunbo.simplenoteapp.domain.di
 
 import com.simuelunbo.simplenoteapp.domain.repository.NoteRepository
-import com.simuelunbo.simplenoteapp.domain.usecase.AddNoteUseCase
-import com.simuelunbo.simplenoteapp.domain.usecase.DeleteNoteUseCase
-import com.simuelunbo.simplenoteapp.domain.usecase.GetNotesUseCase
-import com.simuelunbo.simplenoteapp.domain.usecase.NoteUseCases
+import com.simuelunbo.simplenoteapp.domain.usecase.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -21,7 +18,8 @@ abstract class NoteUseCaseModule {
         return NoteUseCases(
             getNotes = GetNotesUseCase(repository),
             deleteNote = DeleteNoteUseCase(repository),
-            addNote = AddNoteUseCase(repository)
+            addNote = AddNoteUseCase(repository),
+            getNote = GetNoteUseCase(repository)
         )
     }
 }
