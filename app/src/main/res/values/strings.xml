@@ -11,4 +11,5 @@
     <string name="main_notes_screen_sort_icon_description">정렬</string>
     <string name="main_notes_delete_snack_bar_message">노트 삭제 완료</string>
     <string name="main_notes_snack_bar_message_revert">되돌리기</string>
+    <string name="edit_screen_note_save">노트 저장</string>
 </resources>
