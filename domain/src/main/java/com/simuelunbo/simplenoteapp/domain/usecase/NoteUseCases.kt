@@ -1,6 +1,8 @@
 package com.simuelunbo.simplenoteapp.domain.usecase
 
-data class NoteUseCases(
+import javax.inject.Inject
+
+data class NoteUseCases @Inject constructor(
     val getNotes: GetNotesUseCase,
     val deleteNote: DeleteNoteUseCase,
     val addNote: AddNoteUseCase,

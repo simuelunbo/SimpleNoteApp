@@ -6,8 +6,9 @@ import com.simuelunbo.simplenoteapp.domain.util.NoteOrder
 import com.simuelunbo.simplenoteapp.domain.util.OrderType
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-class GetNotesUseCase(
+class GetNotesUseCase @Inject constructor(
     private val repository: NoteRepository
 ) {
     operator fun invoke(
