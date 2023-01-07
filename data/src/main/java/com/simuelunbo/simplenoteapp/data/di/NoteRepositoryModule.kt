@@ -15,7 +15,5 @@ internal abstract class NoteRepositoryModule {
 
     @Binds
     @Singleton
-    fun bindNoteRepository(db: NoteDatabase): NoteRepository {
-        return NoteRepositoryImpl(db.noteDao)
-    }
+    abstract fun bindsNoteRepository(noteRepositoryImpl: NoteRepositoryImpl): NoteRepository
 }

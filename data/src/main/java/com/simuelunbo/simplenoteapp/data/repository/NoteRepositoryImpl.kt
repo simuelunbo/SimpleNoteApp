@@ -6,8 +6,9 @@ import com.simuelunbo.simplenoteapp.domain.model.Note
 import com.simuelunbo.simplenoteapp.domain.repository.NoteRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-internal class NoteRepositoryImpl(
+internal class NoteRepositoryImpl @Inject constructor(
     private val dao: NoteDao
 ) : NoteRepository {
     override fun getNotes(): Flow<List<Note>> {
