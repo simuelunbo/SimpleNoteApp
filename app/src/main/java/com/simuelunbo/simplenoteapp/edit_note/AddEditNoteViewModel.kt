@@ -21,7 +21,6 @@ class AddEditNoteViewModel @Inject constructor(
     private val noteUseCase: NoteUseCases,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
-    private val noteColors = listOf(RedOrange, LightGreen, Violet, BabyBlue, RedPink)
 
     private var currentNoteId: Int? = null
 
