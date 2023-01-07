@@ -20,6 +20,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.simuelunbo.simplenoteapp.notes.components.NoteItem
 import com.simuelunbo.simplenoteapp.notes.components.OrderSection
+import com.simuelunbo.simplenoteapp.util.Screen
 import com.simuelunbo.simpletodoapp.R
 import kotlinx.coroutines.launch
 
@@ -38,7 +39,7 @@ fun NotesScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-
+                    navController.navigate(Screen.AddEditNoteScreen.route)
                 },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
@@ -103,7 +104,10 @@ fun NotesScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-
+                                navController.navigate(
+                                    Screen.AddEditNoteScreen.route +
+                                            "?noteId=${note.id}&noteColor=${note.color}"
+                                )
                             },
                         onDeleteClick = {
                             viewModel.onNotesEvent(NotesEvent.DeleteNote(note))
