@@ -40,8 +40,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
-    // Hilt Core
-    implementation 'com.google.dagger:hilt-core:2.44.2'
+    // Hilt
+    def hilt_version = "2.44.2"
+    implementation "com.google.dagger:hilt-core:$hilt_version"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     // Room
     def room_version = "2.4.3"
