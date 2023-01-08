@@ -87,7 +87,8 @@ fun AddEditNoteScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(8.dp)
+                    .padding(8.dp),
+                horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 noteColors.forEach { color ->
                     val colorInt = color.toArgb()
