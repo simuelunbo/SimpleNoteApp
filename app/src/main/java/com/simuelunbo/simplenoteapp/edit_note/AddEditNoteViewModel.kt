@@ -92,9 +92,7 @@ class AddEditNoteViewModel @Inject constructor(
         viewModelScope.launch {
             val msg = "노트 저장 할수 없습니다"
             runCatching {
-                throw InvalidNoteException(msg)
-            }.onSuccess {
-                noteUseCase.addNote(
+                noteUseCases.addNote(
                     Note(
                         title = noteTitle.value.text,
                         content = noteContent.value.text,
@@ -103,9 +101,12 @@ class AddEditNoteViewModel @Inject constructor(
                         id = currentNoteId
                     )
                 )
-            }.onFailure {
+                _eventFlow.emit(UiEvent.SaveNote)
+            }.getOrElse { e ->
                 _eventFlow.emit(
-                    UiEvent.ShowSnackBar(msg)
+                    UiEvent.ShowSnackBar(
+                        message = e.message ?: msg
+                    )
                 )
             }
         }
