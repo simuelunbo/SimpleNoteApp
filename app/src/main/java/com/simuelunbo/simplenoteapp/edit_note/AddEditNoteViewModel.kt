@@ -6,10 +6,9 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.simuelunbo.simplenoteapp.domain.exception.InvalidNoteException
 import com.simuelunbo.simplenoteapp.domain.model.Note
 import com.simuelunbo.simplenoteapp.domain.usecase.NoteUseCases
-import com.simuelunbo.simplenoteapp.ui.theme.*
+import com.simuelunbo.simplenoteapp.ui.theme.noteColors
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -84,6 +83,7 @@ class AddEditNoteViewModel @Inject constructor(
                     text = note.content,
                     isHintVisible = false
                 )
+                _noteColor.value = note.color
             }
         }
     }
