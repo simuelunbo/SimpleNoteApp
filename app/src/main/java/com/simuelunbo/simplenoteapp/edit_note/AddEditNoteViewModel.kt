@@ -18,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AddEditNoteViewModel @Inject constructor(
-    private val noteUseCase: NoteUseCases,
+    private val noteUseCases: NoteUseCases,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -74,7 +74,7 @@ class AddEditNoteViewModel @Inject constructor(
 
     private fun initEditNote(noteId: Int) {
         viewModelScope.launch {
-            noteUseCase.getNote(noteId)?.also { note ->
+            noteUseCases.getNote(noteId)?.also { note ->
                 currentNoteId = note.id
                 _noteTitle.value = noteTitle.value.copy(
                     text = note.title,
