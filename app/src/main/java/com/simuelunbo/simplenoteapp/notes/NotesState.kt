@@ -6,6 +6,6 @@ import com.simuelunbo.simplenoteapp.domain.util.OrderType
 
 data class NotesState(
     val notes: List<Note> = emptyList(),
-    val noteOrder: NoteOrder = NoteOrder.Date(OrderType.Descending),
+    val noteOrder: NoteOrder = NoteOrder.Date(OrderType.Ascending),
     val isOrderSectionVisible: Boolean = false
 )
