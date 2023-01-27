@@ -30,7 +30,6 @@ fun NoteItem(
     note: Note,
     modifier: Modifier = Modifier,
     cornerRadius: Dp = 10.dp,
-    cutCornerSize: Dp = 30.dp,
     onDeleteClick: () -> Unit
 ) {
     Box(
@@ -38,8 +37,7 @@ fun NoteItem(
     ) {
         Canvas(modifier = Modifier.matchParentSize()) {
             val clipPath = Path().apply {
-                lineTo(size.width - cutCornerSize.toPx(), 0f)
-                lineTo(size.width, cutCornerSize.toPx())
+                lineTo(size.width , 0f)
                 lineTo(size.width, size.height)
                 lineTo(0f, size.height)
                 close()
@@ -51,21 +49,12 @@ fun NoteItem(
                     size = size,
                     cornerRadius = CornerRadius(cornerRadius.toPx())
                 )
-                drawRoundRect(
-                    color = Color(
-                        ColorUtils.blendARGB(note.color, 0x000000, 0.2f)
-                    ),
-                    topLeft = Offset(size.width - cutCornerSize.toPx(), -100f),
-                    size = Size(cutCornerSize.toPx() + 100f, cutCornerSize.toPx() + 100f),
-                    cornerRadius = CornerRadius(cornerRadius.toPx())
-                )
             }
         }
         Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
-                .padding(end = 32.dp)
         ) {
             Text(
                 text = note.title,
@@ -85,7 +74,7 @@ fun NoteItem(
         }
         IconButton(
             onClick = onDeleteClick,
-            modifier = Modifier.align(Alignment.BottomEnd)
+            modifier = Modifier.align(Alignment.TopEnd)
         ) {
             Icon(
                 imageVector = Icons.Default.Delete,
